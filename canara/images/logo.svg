@@ -1,0 +1,23 @@
+<svg width="130" height="130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="vector-effect: non-scaling-stroke;">
+ <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+
+ <title style="vector-effect: non-scaling-stroke;">Fill 1</title>
+ <desc style="vector-effect: non-scaling-stroke;">Created with Sketch.</desc>
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="132" height="132" id="canvas_background" fill="none"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="Page-1" fill="none" fill-rule="evenodd">
+   <g id="site-builder-logo" fill="#ECF0F1">
+    <path d="m138.596008,171.13205l429.558472,0l0,-114.460171l-429.558472,0l0,114.460171zm-578.269684,0l429.608797,0l0,-114.460171l-429.608797,0l0,114.460171zm0,-372.661163l429.608797,0l0,-114.455322l-429.608797,0l0,114.455322zm0,186.328139l243.727402,0l0,-114.450469l-243.727402,0l0,114.450469zm392.438576,0l615.38958,0l0,-114.450469l-615.38958,0l0,114.450469zm185.831108,-186.328139l429.558472,0l0,-114.455322l-429.558472,0l0,114.455322zm-726.930603,444.529129l1305.180298,0l0,-630.857254l-1305.180298,0l0,630.857254z" id="Fill-1"/>
+   </g>
+  </g>
+  <text transform="matrix(0.654638, 0, 0, 0.74356, -17.2358, 33.1599)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="36" id="svg_1" y="10.44828" x="79.499221" stroke-width="3" stroke="#000" fill="#ff0000">YOUR</text>
+  <text transform="matrix(0.654638, 0, 0, 0.74356, -17.2358, 33.1599)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_1" y="50.44828" x="95.499221" stroke-width="1" stroke="#000" fill="#ff0000">LOGO</text>
+    <text transform="matrix(0.654638, 0, 0, 0.74356, -17.2358, 33.1599)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_1" y="106.44828" x="25.499221" stroke-width="0" stroke="#000" fill="#ff0000">YOUR COMPANY</text>
+  <text transform="matrix(0.642734, 0, 0, 0.260055, 14.9253, 134.85)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_7" y="205.668456" x="48.333145" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ff0000">SITE BUILDER</text>
+  <text transform="matrix(0.778269, 0, 0, 0.434752, 0.436539, 73.286)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_8" y="122.868039" x="1.47972" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#020202">SITE BUILDER</text>
+ </g>
+</svg>
