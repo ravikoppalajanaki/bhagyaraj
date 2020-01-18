@@ -1,5 +1,9 @@
 
-
+<style type="text/css">
+	.contact_map .directions-card .directions-card-medium-large{
+		display: none;
+	}
+</style>
 <section class="onova_breadcrumb" style="background-image: url(<?php echo base_url();?>assets/images/bredcumb_bg.jpg);">
 <div class="onova_overlay_2"></div>
 <div class="container">
@@ -72,7 +76,10 @@
 </div>
 <div class="contact_map">
 <!-- <iframe src="https://maps.google.com/maps?q=university%20of%20san%20francisco&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe> -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3800.3111868174165!2d83.29782838794361!3d17.7299707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d17.4604288!2d78.4408576!4m5!1s0x3a394392a8f715fd%3A0x748b8e7479298578!2sgratian%20tech%20vizag!3m2!1d17.730002!2d83.2976391!5e0!3m2!1sen!2sin!4v1578646982885!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3800.3111868174165!2d83.29782838794361!3d17.7299707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d17.4604288!2d78.4408576!4m5!1s0x3a394392a8f715fd%3A0x748b8e7479298578!2sgratian%20tech%20vizag!3m2!1d17.730002!2d83.2976391!5e0!3m2!1sen!2sin!4v1578646982885!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.310523320491!2d83.29545041488119!3d17.730001987874175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a394392a8f715fd%3A0x748b8e7479298578!2sGratian%20Technologies!5e0!3m2!1sen!2sin!4v1579168392061!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
 </div>
 </div>
 </div>
