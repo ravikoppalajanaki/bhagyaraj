@@ -1,0 +1,11 @@
+[05-Mar-2017 09:00:43 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/dnses/public_html/lalsir/admin/app/Http/Controllers/dashboard.php on line 169
+[05-Mar-2017 09:01:17 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/dnses/public_html/lalsir/admin/app/Http/Controllers/dashboard.php on line 169
+[05-Mar-2017 09:01:35 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/dnses/public_html/lalsir/admin/app/Http/Controllers/dashboard.php on line 169
+[05-Mar-2017 09:05:33 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/dnses/public_html/lalsir/admin/app/Http/Controllers/dashboard.php on line 169
+[05-Mar-2017 09:06:31 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/dnses/public_html/lalsir/admin/app/Http/Controllers/dashboard.php on line 169
+[05-Mar-2017 11:08:19 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/dnses/public_html/lalsir/admin/storage/framework/views/4ff1d70187c50c7f3ad41d54ff13414cf1b47d4c.php on line 80
+[05-Mar-2017 11:08:40 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/dnses/public_html/lalsir/admin/storage/framework/views/4ff1d70187c50c7f3ad41d54ff13414cf1b47d4c.php on line 80
+[05-Mar-2017 12:49:28 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/dnses/public_html/lalsir/admin/storage/framework/views/4ff1d70187c50c7f3ad41d54ff13414cf1b47d4c.php on line 398
+[05-Mar-2017 12:50:08 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 123731968 bytes) in /home/dnses/public_html/lalsir/admin/storage/framework/views/4ff1d70187c50c7f3ad41d54ff13414cf1b47d4c.php on line 102
+[05-Mar-2017 12:50:12 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 123731968 bytes) in /home/dnses/public_html/lalsir/admin/storage/framework/views/4ff1d70187c50c7f3ad41d54ff13414cf1b47d4c.php on line 102
+[05-Mar-2017 12:50:32 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 123731968 bytes) in /home/dnses/public_html/lalsir/admin/storage/framework/views/4ff1d70187c50c7f3ad41d54ff13414cf1b47d4c.php on line 102
