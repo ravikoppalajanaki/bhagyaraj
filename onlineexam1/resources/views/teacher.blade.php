@@ -146,6 +146,10 @@ Teachers : List of all Teachers
 	}
 	function editteacher(id,designation,name,dob,gender,email,phone_number,address,joining_date)
 	{
+		if($.trim(gender)=="Male")
+			$("#male").prop("checked", true);
+		if($.trim(gender)=="Female")
+			$("#female").prop("checked", true);
 		$('#IDupdate').val(id);
 		$('#NameUpdate').val(name);
 		$('#DesignationUpdate').val(designation);
