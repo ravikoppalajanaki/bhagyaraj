@@ -36,6 +36,10 @@
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
 
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/responsive.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 </head>
 <body>
 
@@ -60,26 +64,26 @@
 <div class="col-6 offset-6">
 <div class="search-close text-right">
 <button class="search-close-btn"> <span></span><span></span></button>
-</div> 
 </div>
-</div> 
-</div> 
-</div> 
+</div>
+</div>
+</div>
+</div>
 <div class="search-body">
 <div class="container">
 <div class="row">
 <div class="col-lg-12">
 </div>
-</div> 
-</div> 
-</div> 
+</div>
+</div>
+</div>
 </div>
 
 
 <header class="onova_header onova_header_3">
 <div class="header_container_3">
 <div class="onova_logo_3">
-<a href="javascript:void(0)"><img src="<?php echo base_url();?>assets/images/logo_3.png" class="img-fluid" alt=""></a>
+<a href="javascript:void(0)"><img src="<?php echo base_url();?>assets/images/gratian.png" class="img-fluid" alt=""></a>
 </div>
 <div class="onova_main_menu onova_main_menu_3">
 <nav class="main_menu">
@@ -110,9 +114,9 @@
 </div>
 <div class="menu_get_right">
 
-<div class="menu_get_icon bar_icon">
+<!-- <div class="menu_get_icon bar_icon">
 <a href="javascript:void(0)" class="menu_icon"><i class="far fa-bars"></i></a>
-</div>
+</div> -->
 </div>
 </div>
 
@@ -120,7 +124,7 @@
 <div class="row">
 <div class="col-6">
 <div class="mobile_menu_logo">
-<a href="<?php echo base_url();?>" class="logo"><img src="<?php echo base_url();?>assets/images/logo_2.png" alt=""></a>
+<a href="<?php echo base_url();?>" class="logo"><img src="<?php echo base_url();?>assets/images/gratian.png" alt="Gratian Technologies"></a>
 </div>
 </div>
 <div class="col-6">

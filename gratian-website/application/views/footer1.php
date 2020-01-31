@@ -5,7 +5,7 @@
 <div class="col-lg-2">
 <div class="footer_logo">
 <!-- <img src="<?php echo base_url();?>assets/images/logo_4.png" class="img-fluid" alt=""> -->
-<img src="<?php echo base_url();?>assets/images/sglogo.png" class="img-fluid" alt="" style="height: 100px;">
+<img src="<?php echo base_url();?>assets/images/sglogo.png" class="img-fluid" alt="" >
 </div>
 </div>
 <div class="col-lg-10">

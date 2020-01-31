@@ -1,7 +1,8 @@
 <a id="scroll_up"><i class="far fa-angle-up"></i></a>
 
 <script data-cfasync="false" src="<?php echo base_url();?>assets/js/email-decode.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/vendor/jquery-1.12.4.min.js" type="fa53fba36306de774d4f2d01-text/javascript"></script>
+<!-- <script src="<?php echo base_url();?>assets/js/vendor/jquery-1.12.4.min.js" type="fa53fba36306de774d4f2d01-text/javascript"></script>
+ -->
 
 <script src="<?php echo base_url();?>assets/js/vendor/modernizr-3.6.0.min.js" type="fa53fba36306de774d4f2d01-text/javascript"></script>
 

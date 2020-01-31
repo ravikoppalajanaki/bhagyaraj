@@ -37,7 +37,7 @@
 </div>
 <div class="service_info">
 <h4>UI/UX Design</h4>
-<p>Voice and Data Systems are crucial to the success or failure of most. </p>
+<p>You imagine and we will create the approprite design that matches your imagination. </p>
 </div>
 </div>
 </div>
@@ -49,7 +49,7 @@
 </div>
 <div class="service_info">
 <h4>Web Design</h4>
-<p>Voice and Data Systems are crucial to the success or failure of most. </p>
+<p>We create good looking functional sites using wordpress, code-igniter and laravel frameworks. </p>
 </div>
 </div>
 </div>
@@ -60,8 +60,8 @@
 <img class="icon-white" src="<?php echo base_url();?>assets/images/icon_8.1.png" alt="">
 </div>
 <div class="service_info">
-<h4>Game Design</h4>
-<p>Voice and Data Systems are crucial to the success or failure of most. </p>
+<h4>Web Scraping</h4>
+<p>We use python's beautiful soup to scrape the desired information from websites. </p>
 </div>
 </div>
 </div>
@@ -72,8 +72,8 @@
 <img class="icon-white" src="<?php echo base_url();?>assets/images/icon_9.1.png" alt="">
 </div>
 <div class="service_info">
-<h4>Interior Design</h4>
-<p>Voice and Data Systems are crucial to the success or failure of most. </p>
+<h4>Server Management</h4>
+<p>Solve all the server related problems with our certified AWS professionals. </p>
 </div>
 </div>
 </div>
@@ -82,17 +82,16 @@
 <div class="col-lg-6">
 <div class="onova_right_box">
 <div class="about_right_content onova_content">
-<span class="dot"></span>
 <span class="about_span">About Us</span>
-<h2>More Than 50M+<br>People Are Happy <br> with Us.</h2>
-<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</h3>
+<h2>1000+ happy customers <br> and the number is growing...</h2>
+<h3>Our project completion rate is near ~98%.</h3>
 <div class="about_content_block">
 <p>Voice and Data Systems are crucial to the success or failure of most businesses. Many companies provide laptops, cell phones, and Internet connections that require expensive maintenance by internal IT departments. </p>
 <p>However, paying for full-time IT services and multiple telecom providers may be an aoverlooked and unnecessary expense. A no cost analysis of these computer support and telecomm unication expenses can save companies money.</p>
 </div>
 </div>
 <div class="onova_button">
-<a href="#" class="onova_btn about_btn">learn more</a>
+<a href="#" class="onova_btn about_btn">Our Services</a>
 </div>
 </div>
 </div>
@@ -109,7 +108,7 @@
 <div class="col-lg-6">
 <div class="theme_title overlay_title text-center">
 <span class="theme_span">portfolio</span>
-<h2>Case Study</h2>
+<h2>Show Case</h2>
 </div>
 </div>
 </div>
@@ -293,7 +292,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </section>
 
 
-<section class="onova_video onova_video_4">
+<!-- <section class="onova_video onova_video_4">
 <div class="container">
 <div class="row">
 <div class="col-lg-12">
@@ -306,7 +305,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 <section class="why_choose why_choose_2">
@@ -469,7 +468,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </section>
 
 
-<section class="onova_pricing onova_pricing_1 section_padding">
+<!-- <section class="onova_pricing onova_pricing_1 section_padding">
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-lg-6">
@@ -562,7 +561,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 <section class="onova_sponser onova_sponser_2 dark_bg">
@@ -701,7 +700,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="widget_box widget_box_1">
 <div class="footer_title">
 <!-- <img src="<?php echo base_url();?>assets/images/logo_2.png" alt=""> -->
-<img src="<?php echo base_url();?>assets/images/sglogo.png" class="img-fluid" alt="" style="height: 100px;">
+<img src="<?php echo base_url();?>assets/images/sglogo.png" class="img-fluid" alt="" style="width: 139px;">
 </div>
 </div>
 </div>

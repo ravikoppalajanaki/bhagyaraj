@@ -6,11 +6,11 @@
 <div class="row">
 <div class="col-lg-12">
 <div class="breadcrumb_text">
-<h2>Portfolio </h2>
-<ul>
+<h2 style="text-align: center;">Portfolio </h2>
+<!-- <ul>
 <li><a href="<?php echo base_url();?>">Home</a></li>
 <li class="active"><a href="#">Portfolio </a></li>
-</ul>
+</ul> -->
 </div>
 </div>
 </div>
@@ -227,7 +227,7 @@
 </section>
 
 
-<section class="call_to_action_3 dark_blue section_padding">
+<!-- <section class="call_to_action_3 dark_blue section_padding">
 <div class="container">
 <div class="row align-items-center">
 <div class="col-lg-9">
@@ -243,7 +243,7 @@
 </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 

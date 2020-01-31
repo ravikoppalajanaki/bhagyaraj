@@ -5,11 +5,11 @@
 <div class="row">
 <div class="col-lg-12">
 <div class="breadcrumb_text">
-<h2>About Us</h2>
-<ul>
+<h2 style="text-align: center;">About Us</h2>
+<!-- <ul>
 <li><a href="<?php echo base_url();?>">Home</a></li>
 <li class="active"><a href="javascript:void(0)">About</a></li>
-</ul>
+</ul> -->
 </div>
 </div>
 </div>
@@ -101,7 +101,7 @@
 </div>
 </div>
 </div>
-<div class="onova_counterup onova_counterup_1 onova_about_counterup">
+<!-- <div class="onova_counterup onova_counterup_1 onova_about_counterup">
 <div class="counterup_container">
 <div class="row">
 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -150,11 +150,11 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 </section>
 
 
-<section class="onova_video onova_video_2 onova_video_3" style="background-image: url(<?php echo base_url();?>assets/images/video_bg_3.jpg);">
+<!-- <section class="onova_video onova_video_2 onova_video_3" style="background-image: url(<?php echo base_url();?>assets/images/video_bg_3.jpg);">
 <div class="onova_overlay"></div>
 <div class="about_video_main">
 <div class="container">
@@ -171,7 +171,7 @@
 </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 <section class="onova_faq onova_faq_1">
@@ -233,7 +233,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </section>
 
 
-<section class="call_to_action_3 dark_blue section_padding">
+<!-- <section class="call_to_action_3 dark_blue section_padding">
 <div class="container">
 <div class="row align-items-center">
 <div class="col-lg-9">
@@ -249,7 +249,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 </div>
 </div>
 </div>
-</section>
+</section> -->
 
 
 
