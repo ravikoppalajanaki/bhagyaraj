@@ -85,8 +85,8 @@ Teachers : List of all Teachers
                   	<div class="form-group"><label for="email" class="col-sm-2 control-label">Name</label><div class="col-sm-10"><input type="text" class="form-control" name="Name" id="NameUpdate" placeholder="Student Name"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Designation</label><div class="col-sm-10"><input type="text" class="form-control" name="designation" id="DesignationUpdate" placeholder="Roll No."></div></div>
 				     <div class="form-group"><label for="email" class="col-sm-2 control-label">Date of birth</label><div class="col-sm-10"><input type="text" class="form-control" name="dob" id="dobUpdate" placeholder="Teacher date of birth"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Gender</label><div class="col-sm-10"><label class="radio-inline"><input type="radio" name="gender" value="Male" >Male</label>
-                   <label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Gender</label><div class="col-sm-10"><label class="radio-inline"><input type="radio" name="gender" value="Male" id="male" >Male</label>
+                   <label class="radio-inline"><input type="radio" name="gender" value="Female" id="female">Female</label></div></div>
 				   
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Email ID</label><div class="col-sm-10"><input type="text" class="form-control" name="email" placeholder="Teacher Email ID" id="emailUpdate"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Phone Number</label><div class="col-sm-10"><input type="text" class="form-control" name="phone_number" placeholder="Teacher phone number" id="phone_number_update"></div></div>

@@ -213,6 +213,12 @@ class dashboard extends Controller
 			
 	    }
 
+	    public function permission()
+	    {
+	    	$data = array();
+	    	return view('permission',$data);
+	    }
+
 	    public function teacherupdate(Request $request)
 	    {
 			

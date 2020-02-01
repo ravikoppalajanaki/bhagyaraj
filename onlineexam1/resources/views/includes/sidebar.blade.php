@@ -10,7 +10,7 @@
             </div>
           </div>
           <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <!-- h sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li>
@@ -53,7 +53,21 @@
                  <i class="fa fa-table"></i> <span>Settings</span>
               </a>
             </li>
-           
+           <li class="treeview">
+            <a href="#">
+                 <i class="fa fa-table"></i> <span>Administration</span>
+                 <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+              </a>
+             <ul class="treeview-menu">
+               <li>
+                 <a href="{{url('permission')}}">
+                 <i class="fa fa-table"></i> <span>Permission</span>
+              </a>
+               </li>
+             </ul>
+           </li>
             <!--li>
               <a href="{{url('admins')}}">
                  <i class="fa fa-table"></i> <span>Admin Users</span>
@@ -61,4 +75,5 @@
             </li-->
           </ul>
         </section>
+        
         <!-- /.sidebar -->

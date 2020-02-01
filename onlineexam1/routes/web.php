@@ -39,6 +39,9 @@ Route::post('/teacher/update', array('as' => 'teacherupdate', 'uses' => 'dashboa
 Route::post('/teacher/add', array('as' => 'teacheradd', 'uses' => 'dashboard@teacheradd'));
 Route::get('/teacher/remove/{id}', array('as' => 'teacherremove', 'uses' => 'dashboard@teacherremove'));
 
+//Teacher
+Route::get('/permission', array('as' => 'permission', 'uses' => 'dashboard@permission'));
+
 //Supervisor
 Route::get('/supervisor', array('as' => 'supervisor', 'uses' => 'dashboard@supervisor'));
 Route::post('/supervisor/update', array('as' => 'supervisorupdate', 'uses' => 'dashboard@supervisorupdate'));
