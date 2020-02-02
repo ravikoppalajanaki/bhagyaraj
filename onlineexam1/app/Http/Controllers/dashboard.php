@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Subject;
 use App\Student;
 use App\Teacher;
+use App\Permission;
 use App\Settings;
 use App\SV;
 use App\QB;
@@ -63,7 +64,9 @@ class dashboard extends Controller
     public function student()
     {
 	$Student = Student::paginate(10);
-	$data = array("Student" => $Student);
+	$Teacher = Teacher::all('id', 'name');
+	//echo"<pre>";print_r($Teacher);exit;
+	$data = array("Student" => $Student,"Teacher"=>$Teacher);
     return view('student', $data);
     }
 	
@@ -115,6 +118,7 @@ class dashboard extends Controller
         $Student = new Student;
 		$Student->RollNo = $request->RollNo;
 		$Student->Name = $request->Name;
+		$Student->Teacher = $request->Teachername;
 		if($request->hasFile('image'))
 		{
 		$img_path = 'img/upload/';

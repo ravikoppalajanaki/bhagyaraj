@@ -49,6 +49,7 @@ Students : List of all Students
                   <div class="box-body" id="addformdiv">
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Roll No.</label><div class="col-sm-10"><input type="text" class="form-control" name="RollNo" placeholder="Roll No."></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Name</label><div class="col-sm-10"><input type="text" class="form-control" name="Name" placeholder="Student Name"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Select Teacher</label><div class="col-sm-10"><select name="Teachername" class="form-control"><option value="">Select Teacher</option> @foreach($Teacher as $T)<option value="{{$T->name}}">{{$T->name}}</option> @endforeach </select></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Image</label><div class="col-sm-10"><input type="file" class="form-control" name="image" placeholder="Student Photo" accept=".jpg"></div></div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
