@@ -59,7 +59,7 @@ Administartion : Panel
 				
 				 <tbody>
 					<tr>
-					<td ><input type="checkbox" name=""></td>
+					<td ><input type="checkbox"  name="perm_dashboard" data-value="Dashboard"></td>
 					<td >Dashboard</td>
 					<td ></td>
 					<td ></td>
@@ -67,20 +67,21 @@ Administartion : Panel
 					<td ></td>
 					</tr>
 					<tr>
-					<td ><input type="checkbox" name=""></td>
+					<td ><input type="checkbox" class="permsn" name="perm_student" data-value="Student"></td>
 					<td >Student</td>
-					<td ><input type="checkbox" name=""></td>
-					<td ><input type="checkbox" name=""></td>
-					<td ><input type="checkbox" name=""></td>
-					<td ><input type="checkbox" name=""></td>
+					<td ><input type="checkbox" class="childpm" name="" data-value="Student_add"></td>
+					<td ><input type="checkbox" class="childpm" name="" data-value="Student_edit"></td>
+					<td ><input type="checkbox" class="childpm" name="" data-value="Student_delete"></td>
+					<td ><input type="checkbox" class="childpm" name="" data-value="Student_view"></td>
 					</tr>
 					<tr>
                        <td colspan="6" rowspan="2">
-                        <input class="btn btn-success" type="submit" name="" value="Save Permission">
+                        <input class="btn btn-success" type="submit" name="" id="btnpermission" value="Save Permission">
                         </td>
                      </tr>
-				</tbody>
-				</table>
+					</tbody>
+				  </table>
+				  
 
 				 </div>
 			</div>
@@ -93,18 +94,82 @@ Administartion : Panel
 @endsection
 @section('extra')
   <script>
+  
+	var listInput = [];
+  $("#btnpermission").attr("disabled", "disabled");
+  $(".childpm").attr("disabled", true);
+  
+  $('.permsn').change(function(){
+  
+      if($(this).prop("checked") == true){
+        $(".childpm").attr("disabled", false); //enable all check box
+        $(this).removeAttr("disabled");// enable current checkbox
+        $('.childpm').prop('checked', true);
+    }
+
+    else //Add this part only if you have to disable all checkbox after uncheck cuurent one
+    {
+       $(".childpm").attr("disabled", true);
+       $('.childpm').prop('checked', false);
+    }
+  });
+  $('input[type=checkbox]').change(function() {
+  listInput = [];
+      $("#permission_table > tbody  tr").each(function () {      			
+      		if ($('input[type=checkbox]').is(':checked')) {  
+             $('#btnpermission').removeAttr('disabled');            
+          }else{         
+          	 $("#btnpermission").attr("disabled", "disabled");
+             
+          }
+      });
+      });
+
 $("#SubjectID").change(function(e){
 	e.preventDefault();
 	var val=$(this).val();
 	if(val!=''){
 		$("#permission_table").show();
-	}
-	else
-		$("#permission_table").hide();
-	
+		
 
+
+	}
+	else{
+		$("#permission_table").hide();
+		
+	}
+	
+});
+
+$("#btnpermission").click(function(e){
+	e.preventDefault();
+	if ($('input[type=checkbox]').is(':checked')) {
+     	$('input[type=checkbox]').each(function(){
+      		if ($(this).is(':checked')) 
+          {
+            listInput.push($(this).attr('data-value'));
+          }
+      });
+      
+    }
+    var data={permission:listInput}
+console.log(data);
 });
 	
+
+
+	 /*$("input[name^='perm_']").change(function() { 
+	 if($(this).attr("checked"))
+	  $(this).closest("tr").children().children().removeAttr("disabled");
+	   else { //remove checks
+	    $(this).closest("tr").children().children().removeAttr("checked");
+	     //make all disabled
+	      $(this).closest("tr").children().children().attr("disabled","true");
+	       //but fix me 
+	       $(this).removeAttr("disabled");
+	        } 
+	    });*/
+	 
 </script>
 <style type="text/css">
 	.style{
