@@ -222,6 +222,113 @@ class dashboard extends Controller
 	    	$data = array();
 	    	return view('permission',$data);
 	    }
+	    public function savepermissions(Request $request)
+	    {
+	    	//echo "<pre>";print_r($request->student_permission);exit;
+	    	$studentmodule=$request->student_permission;
+	    	$Dashboardmodule=$request->dashboard_permission;
+	    	$role=$request->role;
+	    	$count = Permission::where("role", $role)->count();
+	    	//echo "<pre>";print_r($Dashboardmodule);exit;
+	    	if ($count==0) {
+	    		if($Dashboardmodule!=''){
+	    		   $Permission = new Permission;
+	    		   $Permission->role = $role;
+	    		   $Permission->module_name = $Dashboardmodule[0];
+	    		   $Permission->add = 0;
+	    		   $Permission->edit = 0;
+	    		   $Permission->delete = 0;
+	    		   $Permission->view = 0;
+	    		   $Permission->save();
+	    		   
+	    		}
+	    		else{
+                        $Permission = new Permission;
+	    		   $Permission->role = $role;
+	    		   $Permission->module_name = "Dashboard";
+	    		   $Permission->add = 1;
+	    		   $Permission->edit = 1;
+	    		   $Permission->delete = 1;
+	    		   $Permission->view = 1;
+	    		   $Permission->save();
+	    		}
+	    		if($studentmodule!=''){
+	    		   $Permission = new Permission;
+	    		   $Permission->role = $role;
+	    		   $Permission->module_name = $studentmodule[0];
+	    		   if (in_array("Student_add", $studentmodule))
+	    		        $Permission->add = 0;
+	    		    else
+	    		    	$Permission->add = 1;
+	    		    if (in_array("Student_edit", $studentmodule))
+	    		        $Permission->edit = 0;
+	    		    else
+	    		    	$Permission->edit = 1;
+	    		   if (in_array("Student_delete", $studentmodule))
+	    		        $Permission->delete = 0;
+	    		    else
+	    		    	$Permission->delete = 1;
+	    		   if (in_array("Student_view", $studentmodule))
+	    		        $Permission->view = 0;
+	    		    else
+	    		    	$Permission->view = 1;
+	    		   
+	    		   $Permission->save();
+	    		   
+	    		}
+	    		else{
+                        $Permission = new Permission;
+	    		   $Permission->role = $role;
+	    		   $Permission->module_name = "Student";
+	    		   $Permission->add = 1;
+	    		   $Permission->edit = 1;
+	    		   $Permission->delete = 1;
+	    		   $Permission->view = 1;
+	    		   $Permission->save();
+	    		}
+	    		echo "Permissions saved";
+	    	}
+	    	else{
+	    		$where = ['role' => $role, 'module_name' => 'Student'];
+	    		$studentmoduleid = Permission::select('id')->where($where)->get()->toArray();
+	    		//echo "<pre>";print_r(count($studentmoduleid));exit;
+                  if (count($studentmoduleid)>0) {
+                  	if (in_array("Student_add", $studentmodule))
+	    		        $sadd = 0;
+	    		    else
+	    		    	$sadd = 1;
+	    		    if (in_array("Student_edit", $studentmodule))
+	    		        $sedit = 0;
+	    		    else
+	    		    	$sedit = 1;
+	    		   if (in_array("Student_delete", $studentmodule))
+	    		        $sdelete = 0;
+	    		    else
+	    		    	$sdelete = 1;
+	    		   if (in_array("Student_view", $studentmodule))
+	    		        $sview = 0;
+	    		    else
+	    		    	$sview = 1;
+                  	$update = array('add' => $sadd,'edit' => $sedit,'delete' => $sdelete,'view' => $sview );
+                  	$affectedRows = Permission::where("id", $studentmoduleid[0]['id'])->update($update);
+                  }
+
+                  $where = ['role' => $role, 'module_name' => 'Dashboard'];
+	    		$dashboardmoduleid = Permission::select('id')->where($where)->get()->toArray();
+	    		if (count($dashboardmoduleid)>0) {
+	    			if($Dashboardmodule!=''){
+                  	if (in_array("Dashboard", $Dashboardmodule))
+	    		        {$dadd = 0;$dedit=0;$ddelete=0;$dview=0;}}
+	    		    else
+	    		    	{$dadd = 1;$dedit=1;$ddelete=1;$dview=1;}
+	    		    
+                  	$update = array('add' => $dadd,'edit' => $dedit,'delete' => $ddelete,'view' => $dview );
+                  	$affectedRows = Permission::where("id", $dashboardmoduleid[0]['id'])->update($update);
+                  }
+	    		echo "Permissions Updated";
+	    		
+	    	}
+	    }
 
 	    public function teacherupdate(Request $request)
 	    {

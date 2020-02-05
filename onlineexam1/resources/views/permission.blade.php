@@ -17,24 +17,24 @@ Administartion : Panel
 
         <!-- Main content -->
         <section class="content">	
-		@if(session()->has('success'))
+		
           <div class="row">
 		  <div class="col-md-12">
-		  <div class="alert alert-success">
-		  {{ session()->get('success') }}
+		  <div class="alert alert-success" style="display: none;" id="succ">
+		     Permissions saved successfully
 		  </div>
 		  </div>
 		  </div>
-		  @endif	
-		@if(session()->has('errors'))
+		 
+		
           <div class="row">
 		  <div class="col-md-12">
-		  <div class="alert alert-warning">
-		  {{ session()->get('errors') }}
+		  <div class="alert alert-warning" style="display: none;"id="err">
+		     Permissions updated successfully
 		  </div>
 		  </div>
 		  </div>
-		  @endif
+		  
 			<div class="box box-default">
 				<div class="box-header with-border full">
 				  <h3 class="box-title styling">Permissions</h3>
@@ -143,6 +143,7 @@ $("#SubjectID").change(function(e){
 
 $("#btnpermission").click(function(e){
 	e.preventDefault();
+	listInput = [];
 	if ($('input[type=checkbox]').is(':checked')) {
      	$('input[type=checkbox]').each(function(){
       		if ($(this).is(':checked')) 
@@ -152,23 +153,40 @@ $("#btnpermission").click(function(e){
       });
       
     }
-    var data={permission:listInput}
-console.log(data);
+		    let map = ((m, a) => (a.forEach(s => {
+		  let a = m.get(s[0]) || [];
+		  m.set(s[0], (a.push(s), a));
+		}), m))(new Map(), listInput);
+
+    var permissions={role:$("#SubjectID").val(),dashboard_permission:map.get("D"),student_permission:map.get("S")}
+   //console.log(permissions);
+   $.ajax({
+   	url:"{{url('permission/add')}}",
+   	method:"POST",
+   	data:permissions,
+   	success:function(data){
+   		//console.log(data);
+   		if ($.trim(data)=="Permissions saved") {
+   			$("#succ").show();
+   			setTimeout(
+				    function () {
+				        $("#succ").hide();
+				    },1000);
+   		}
+   		if ($.trim(data)=="Permissions Updated") {
+   			$("#err").show();
+		   			setTimeout(
+				    function () {
+				        $("#err").hide();
+				    },1000);
+   		}
+   	}
+
+   });
+   
 });
 	
 
-
-	 /*$("input[name^='perm_']").change(function() { 
-	 if($(this).attr("checked"))
-	  $(this).closest("tr").children().children().removeAttr("disabled");
-	   else { //remove checks
-	    $(this).closest("tr").children().children().removeAttr("checked");
-	     //make all disabled
-	      $(this).closest("tr").children().children().attr("disabled","true");
-	       //but fix me 
-	       $(this).removeAttr("disabled");
-	        } 
-	    });*/
 	 
 </script>
 <style type="text/css">
