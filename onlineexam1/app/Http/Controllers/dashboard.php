@@ -224,12 +224,12 @@ class dashboard extends Controller
 	    }
 	    public function savepermissions(Request $request)
 	    {
-	    	//echo "<pre>";print_r($request->student_permission);exit;
+	    	
 	    	$studentmodule=$request->student_permission;
 	    	$Dashboardmodule=$request->dashboard_permission;
 	    	$role=$request->role;
 	    	$count = Permission::where("role", $role)->count();
-	    	//echo "<pre>";print_r($Dashboardmodule);exit;
+	    	
 	    	if ($count==0) {
 	    		if($Dashboardmodule!=''){
 	    		   $Permission = new Permission;
@@ -291,9 +291,10 @@ class dashboard extends Controller
 	    	else{
 	    		$where = ['role' => $role, 'module_name' => 'Student'];
 	    		$studentmoduleid = Permission::select('id')->where($where)->get()->toArray();
-	    		//echo "<pre>";print_r(count($studentmoduleid));exit;
+	    		
                   if (count($studentmoduleid)>0) {
-                  	if (in_array("Student_add", $studentmodule))
+                  	if($studentmodule!=''){
+                  		if (in_array("Student_add", $studentmodule))
 	    		        $sadd = 0;
 	    		    else
 	    		    	$sadd = 1;
@@ -311,6 +312,12 @@ class dashboard extends Controller
 	    		    	$sview = 1;
                   	$update = array('add' => $sadd,'edit' => $sedit,'delete' => $sdelete,'view' => $sview );
                   	$affectedRows = Permission::where("id", $studentmoduleid[0]['id'])->update($update);
+                  	}
+                  	else{
+                  		$update = array('add' => 1,'edit' => 1,'delete' => 1,'view' => 1 );
+                  	$affectedRows = Permission::where("id", $studentmoduleid[0]['id'])->update($update);
+                  	}
+                  	
                   }
 
                   $where = ['role' => $role, 'module_name' => 'Dashboard'];

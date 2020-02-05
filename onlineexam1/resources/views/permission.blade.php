@@ -159,7 +159,7 @@ $("#btnpermission").click(function(e){
 		}), m))(new Map(), listInput);
 
     var permissions={role:$("#SubjectID").val(),dashboard_permission:map.get("D"),student_permission:map.get("S")}
-   //console.log(permissions);
+   
    $.ajax({
    	url:"{{url('permission/add')}}",
    	method:"POST",
