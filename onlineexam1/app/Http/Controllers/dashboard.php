@@ -222,6 +222,20 @@ class dashboard extends Controller
 	    	$data = array();
 	    	return view('permission',$data);
 	    }
+	    public function rolepermission(Request $request)
+	    {
+	    	$role=$request->role;
+	    	$where = ['role' => $role];
+	       $result = Permission::select('id','module_name','add','edit','delete','view')->where($where)->get()->toArray();
+	       if ($result) {
+	       	  
+	       		$data = array('statuscode' =>200,'Permissions'=>$result);
+	       }
+	       else{
+	       		$data = array('statuscode' =>201,'Permissions'=>'No Records Found');
+	       }
+	       echo json_encode($data);
+	    }
 	    public function savepermissions(Request $request)
 	    {
 	    	

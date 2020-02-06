@@ -41,6 +41,7 @@ Route::get('/teacher/remove/{id}', array('as' => 'teacherremove', 'uses' => 'das
 
 //Permissions
 Route::get('/permission', array('as' => 'permission', 'uses' => 'dashboard@permission'));
+Route::post('/permission/role', array('as' => 'rolepermission', 'uses' => 'dashboard@rolepermission'));
 Route::post('/permission/add', array('as' => 'addpermission', 'uses' => 'dashboard@savepermissions'));
 
 //Supervisor

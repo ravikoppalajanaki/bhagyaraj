@@ -59,7 +59,7 @@ Administartion : Panel
 				
 				 <tbody>
 					<tr>
-					<td ><input type="checkbox"  name="perm_dashboard" data-value="Dashboard"></td>
+					<td ><input type="checkbox" class="dashchck" name="perm_dashboard" data-value="Dashboard"></td>
 					<td >Dashboard</td>
 					<td ></td>
 					<td ></td>
@@ -67,12 +67,12 @@ Administartion : Panel
 					<td ></td>
 					</tr>
 					<tr>
-					<td ><input type="checkbox" class="permsn" name="perm_student" data-value="Student"></td>
+					<td ><input type="checkbox" class="permsn stdntchck" name="perm_student" data-value="Student"></td>
 					<td >Student</td>
-					<td ><input type="checkbox" class="childpm" name="" data-value="Student_add"></td>
-					<td ><input type="checkbox" class="childpm" name="" data-value="Student_edit"></td>
-					<td ><input type="checkbox" class="childpm" name="" data-value="Student_delete"></td>
-					<td ><input type="checkbox" class="childpm" name="" data-value="Student_view"></td>
+					<td ><input type="checkbox" class="childpm stdntaddchck" name="" data-value="Student_add"></td>
+					<td ><input type="checkbox" class="childpm stdnteditchck" name="" data-value="Student_edit"></td>
+					<td ><input type="checkbox" class="childpm stdntdeletechck" name="" data-value="Student_delete"></td>
+					<td ><input type="checkbox" class="childpm stdntviewchck" name="" data-value="Student_view"></td>
 					</tr>
 					<tr>
                        <td colspan="6" rowspan="2">
@@ -131,7 +131,59 @@ $("#SubjectID").change(function(e){
 	if(val!=''){
 		$("#permission_table").show();
 		
+		$.ajax({
+		   	url:"{{url('permission/role')}}",
+		   	method:"POST",
+		   	data:{role:val},
+		   	success:function(data){
+		   		//console.log(data);
+		   		r=JSON.parse(data);
+		   		if (r.statuscode==200) {
+		   			//console.log(r.Permissions);
+		   			var test=r.Permissions;
+		   			for (index = 0; index < test.length; ++index) {
+       						console.log(test[index]);
+   						if(test[index]['module_name']=="Dashboard"){
+							//$(".dashchck").prop("checked", true);
+							if (test[index]['add']==0)
+							  $(".dashchck").prop("checked",true);
+							 
+							  if (test[index]['edit']==0)
+							  $(".dashchck").prop("checked",true);
+							  
+							  if (test[index]['delete']==0)
+							  $(".dashchck").prop("checked",true);
+							  
+							  if (test[index]['view']==0)
+							  $(".dashchck").prop("checked",true);
+							  
+   						}
+   						if(test[index]['module_name']=="Student"){
+   							$(".stdntchck").prop("checked", true);
+   							$(".permsn").trigger("change");
+							if (test[index]['add']==0)
+							  $(".stdntaddchck").prop("checked",true);
+							  else
+							  	$(".stdntaddchck").prop("checked",false);
+							  if (test[index]['edit']==0)
+							  $(".stdnteditchck").prop("checked",true);
+							  else
+							  	$(".stdnteditchck").prop("checked",false);
+							  if (test[index]['delete']==0)
+							  $(".stdntdeletechck").prop("checked",true);
+							  else
+							  	$(".stdntdeletechck").prop("checked",false);
+							  if (test[index]['view']==0)
+							  $(".stdntviewchck").prop("checked",true);
+							  else
+							  	$(".stdntviewchck").prop("checked",false);
 
+   						}
+					}
+		   		}
+		   	}
+
+		   });
 
 	}
 	else{
@@ -165,7 +217,7 @@ $("#btnpermission").click(function(e){
    	method:"POST",
    	data:permissions,
    	success:function(data){
-   		//console.log(data);
+   		
    		if ($.trim(data)=="Permissions saved") {
    			$("#succ").show();
    			setTimeout(
