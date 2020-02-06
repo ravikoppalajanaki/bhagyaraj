@@ -159,6 +159,9 @@ $("#SubjectID").change(function(e){
 							  
    						}
    						if(test[index]['module_name']=="Student"){
+   							if(test[index]['add']==1 && test[index]['edit']==1 && test[index]['delete']==1 && test[index]['view']==1)
+   							$(".stdntchck").prop("checked", false);
+   						else
    							$(".stdntchck").prop("checked", true);
    							$(".permsn").trigger("change");
 							if (test[index]['add']==0)
