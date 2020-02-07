@@ -46,10 +46,10 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="{{url('myprofile')}}" class="btn btn-default btn-flat">My Profile</a>
+                      <a href="#" class="btn btn-default btn-flat">My Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="{{url('logout')}}" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="{{url('teacher/logout')}}" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>

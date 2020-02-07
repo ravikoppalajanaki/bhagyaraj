@@ -35,8 +35,8 @@ class TeacherController extends Controller
 	
 	public function loginpost(Request $request)
 	{
-		 $username = $request->input('Username');
-		 $password = $request->input('password');
+		 $username = $request->Username;
+		 $password = $request->password;
 		 $password = md5($password);
 		 $where = ['password' => $password,'username'=> $username];
 		 $Teacher = Teacher::where($where)->count();
@@ -48,17 +48,30 @@ class TeacherController extends Controller
 		 if(count($errors) == 0)
 		 {
 		 $Teacher = Teacher::where($where)->first();
-		  //echo"<pre>";print_r($Teacher);exit;
-		 $teacher_details = array("Teacher" => $Teacher);
+		$teacher_details = array("Teacher" => $Teacher);
 		 $request->session()->regenerate();
 		 session(['teacher_details' => $Teacher]);
-		 return view('teacherdashboard', $teacher_details);
-		 //session()->get('data');
+		 
+		 echo "success";
 		 }
 		 else
 		 {
-			 return back()->withErrors($errors);
+		 	echo "Wrong credentials";
 		 }
+	}
+	public function dashboard()
+	{
+		if(!session()->has('teacher_details'))
+		{
+			return redirect()->route('teacherlogin');
+		}
+		$data = array();
+		return view('teacherdashboard', $data);
+	}
+	public function logout(Request $request)
+	{
+		$request->session()->flush();
+		return redirect()->route('teacherlogin');
 	}
 	
 	

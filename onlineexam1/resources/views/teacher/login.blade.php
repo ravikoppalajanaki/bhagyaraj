@@ -27,15 +27,15 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your Test</p>
-        <form action="{{url('teacher/checkdetails')}}" method="post">
+        <form id="form">
 		  {!! csrf_field() !!}
           <div class="form-group has-feedback">
-            <input type="text" name="Username" class="form-control" placeholder="Username">
+            <input type="text" name="Username" id="Username" class="form-control" placeholder="Username">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
          
           <div class="form-group has-feedback">
-            <input type="password" name="password" class="form-control" placeholder="Teacher Password">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Teacher Password">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -43,21 +43,25 @@
               
             </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+              <button type="button" class="btn btn-primary btn-block btn-flat" id="submit">Sign In</button>
             </div><!-- /.col -->
           </div>
         </form>
 
       </div><!-- /.login-box-body -->	
-	  @if(count($errors) > 0)
-<br />	  
-<p class="alert alert-danger">
+	 <!--  @if(count($errors) > 0)
+<br />	 -->  
+<!-- <p class="alert alert-danger">
  @foreach($errors->all() as $error)
            {!!$error!!}<br />
         @endforeach
 		</p>
-	@endif
+	@endif -->
+  <p class="alert alert-danger" id="err" style="display: none;">
+    Wrong credentials
+  </p>
     </div><!-- /.login-box -->
+   
 
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
@@ -65,6 +69,28 @@
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- iCheck -->
     <script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
-   
+    <script type="text/javascript">
+      $("#submit").click(function(e){
+        e.preventDefault();
+        
+        var username=$("#Username").val();
+        var password=$("#password").val();
+        $.ajax({
+
+          url:"{{url('teacher/checkdetails')}}",
+          method:"POST",
+          data:{_token: "{{ csrf_token() }}",Username:username,password:password},
+          success:function(data){
+            if($.trim(data)=="success"){
+              window.location="{{url('teacher/dashboard')}}";
+            }
+            if($.trim(data)=="Wrong credentials"){
+              $("#err").show();
+            }
+          }
+
+        });
+      });
+    </script>
   </body>
 </html>
