@@ -36,12 +36,16 @@ Route::get('/student/remove/{id}', array('as' => 'studentremove', 'uses' => 'das
 //Teacher
 Route::get('/teacher', array('as' => 'teacher', 'uses' => 'dashboard@teacher'));
 Route::post('/teacher/update', array('as' => 'teacherupdate', 'uses' => 'dashboard@teacherupdate'));
+Route::post('/teacher/studentupdate', array('as' => 'teacherstudentupdate', 'uses' => 'TeacherController@studentupdate'));
 Route::post('/teacher/add', array('as' => 'teacheradd', 'uses' => 'dashboard@teacheradd'));
+Route::post('/teacher/studentadd', array('as' => 'teacherstudentadd', 'uses' => 'TeacherController@studentadd'));
 Route::get('/teacher/remove/{id}', array('as' => 'teacherremove', 'uses' => 'dashboard@teacherremove'));
+Route::get('/teacher/studentremove/{id}', array('as' => 'teacherstudentremove', 'uses' => 'TeacherController@studentremove'));
 Route::get('/teacher/login', array('as' => 'teacherlogin', 'uses' => 'TeacherController@login'));
 Route::post('/teacher/checkdetails', array('as' => 'teachercheck', 'uses' => 'TeacherController@loginpost'));
 Route::get('/teacher/dashboard', array('as' => 'teacherdashboard', 'uses' => 'TeacherController@dashboard'));
 Route::get('/teacher/logout', array('as' => 'teacherlogout', 'uses' => 'TeacherController@logout'));
+Route::get('/teacher/students', array('as' => 'teacherstudents', 'uses' => 'TeacherController@students'));
 //Permissions
 Route::get('/permission', array('as' => 'permission', 'uses' => 'dashboard@permission'));
 Route::post('/permission/role', array('as' => 'rolepermission', 'uses' => 'dashboard@rolepermission'));
