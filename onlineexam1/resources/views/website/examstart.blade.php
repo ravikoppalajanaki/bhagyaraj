@@ -37,7 +37,7 @@
 	<div class="col-md-3"><strong>Subject :</strong><br />{{$Subject->Name}} <br /><br /><strong>Student Roll No.:</strong> <br />{{$Student->RollNo}}</div>
 	<div class="col-md-3"><strong>Test Time : </strong><br />{{$Settings->timing}}<br /><br /><strong>Student Name:</strong><br /> {{$Student->Name}}</div>
 	<div class="col-md-3"><strong>No. Of Questions : </strong><br />{{$Settings->noQuestion}}<br /><br /><strong>Supervisor Name:</strong><br /> {{$SV->Name}}</div>
-	<div class="col-md-3"><h3 class="pull-right" style="margin-top: 0px; margin-bottom: 10px;"><span class="label label-success" id="timer"></span></h3><button class="btn btn-danger pull-right" onclick="endexam()">End Exam</button></div>
+	<div class="col-md-3"><h3 class="pull-right" style="margin-top: 0px; margin-bottom: 10px;"><span class="label label-success blink" id="timer"></span></h3><button class="btn btn-danger pull-right" onclick="endexam()">End Exam</button></div>
 	</div>
 	</div>
 	
@@ -219,7 +219,13 @@ function timewarning(b){
 	 {
 	 jQuery('#timer').removeClass('label-success');
      jQuery('#timer').addClass('label-warning');
+
+      setInterval(function() {
+        $('.blink').fadeIn(300).fadeOut(500);
+       
+    }, 400);
 	 } 
+   
   else if(b == 2)
 	 {
 	 jQuery('#timer').removeClass('label-warning');
