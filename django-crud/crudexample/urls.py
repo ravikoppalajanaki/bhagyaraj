@@ -19,6 +19,10 @@ from employee import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home),
+    path('about', views.about),
+    path('products', views.products),
+    path('store', views.store),
     path('emp', views.emp),  
     path('show',views.show),  
     path('edit/<int:id>', views.edit),  
