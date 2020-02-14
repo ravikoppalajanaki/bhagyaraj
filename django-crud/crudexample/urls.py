@@ -27,5 +27,9 @@ urlpatterns = [
     path('show',views.show),  
     path('edit/<int:id>', views.edit),  
     path('update/<int:id>', views.update),  
-    path('delete/<int:id>', views.destroy),  
+    path('delete/<int:id>', views.destroy),
+    path('crud',  views.ajaxcurd, name='crud_ajax'),
+    path('ajax/crud/create',  views.ajaxcreate, name='crud_ajax_create'),
+    path('ajax/crud/update',  views.ajaxupdate, name='crud_ajax_update'),
+    path('ajax/crud/delete',  views.ajaxdelete, name='crud_ajax_delete'),
 ]
