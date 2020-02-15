@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Subject;
 use App\Student;
@@ -17,9 +17,9 @@ use Auth;
 use File;
 use Image;
 use Response;
-
+use Validator;
 use Carbon\Carbon;
-
+use Redirect;
 class dashboard extends Controller
 {
     public function __construct()
@@ -164,8 +164,9 @@ class dashboard extends Controller
     return view('teacher', $data);
     }
 	public function teacheradd(Request $request)
-	    { 	   
-	        
+	    { 
+			    
+	      
 	        $Teacher = new Teacher;
 			$Teacher->designation = $request->Designation;
 			$Teacher->name = $request->Name;
@@ -213,7 +214,7 @@ class dashboard extends Controller
 			$Teacher->save();
 			$msg = 'Teacher has been added';
 			return redirect('teacher')->with('success', $msg);
-				
+		
 			
 	    }
 

@@ -3,6 +3,51 @@
 Teachers : List of all Teachers
 @endsection
 @section('content')
+<script type="text/javascript"> $(document).ready(function () {
+//alert("hii");
+    $('#submitform').validate({ 
+
+        rules: {
+            Name: {
+                required: true
+            },
+            Designation: {
+                required: true
+            },
+            email: {
+                required: true,
+                email:true
+            },
+            gender: {
+                required: true
+            },
+            address: {
+                required: true
+            },
+            phone_number: {
+                required: true,
+                digits:true
+            },
+            dob: {
+                required: true
+            },
+            joining_date: {
+                required: true
+            },
+            username: {
+                required: true
+            },
+            Password: {
+                required: true
+            },
+            image: {
+                required: true
+            },
+        }
+    });
+
+});
+</script>
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
@@ -25,7 +70,8 @@ Teachers : List of all Teachers
 		  </div>
 		  </div>
 		  </div>
-		  @endif	
+		  @endif
+
 		@if(session()->has('errors'))
           <div class="row">
 		  <div class="col-md-12">
@@ -35,7 +81,10 @@ Teachers : List of all Teachers
 		  </div>
 		  </div>
 		  @endif
+
+
 		  
+		 
 		   <div class="row" id="Teacher_add"  style="display:none;">
 		  <div class="col-md-12">
 		  <div class="box box-info">
@@ -44,22 +93,22 @@ Teachers : List of all Teachers
 			</div>
 		    <div class="box-body">
 		  <!-- form start -->
-                <form action="{{url('teacher/add')}}" method="post"  enctype="multipart/form-data" class="form-horizontal">
+                <form action="{{url('teacher/add')}}" method="post"  enctype="multipart/form-data" class="form-horizontal" id="submitform">
 					{!! csrf_field() !!}
                   <div class="box-body" id="addformdiv">
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Name</label><div class="col-sm-10"><input type="text" class="form-control" name="Name" placeholder="Teacher Name"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Designation</label><div class="col-sm-10"><input type="text" class="form-control" name="Designation" placeholder="Teacher Designation"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Name</label><div class="col-sm-10"><input type="text" class="form-control" id="Name" name="Name" placeholder="Teacher Name"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Designation</label><div class="col-sm-10"><input type="text" class="form-control" id="Designation" name="Designation" placeholder="Teacher Designation"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Date of birth</label><div class="col-sm-10"><input type="text" class="form-control" name="dob" id="dob" placeholder="Teacher date of birth"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Gender</label><div class="col-sm-10"><label class="radio-inline"><input type="radio" name="gender" value="Male" >Male</label>
-                   <label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Gender</label><div class="col-sm-10"><label class="radio-inline"><input type="radio" id="gender" name="gender" value="Male" >Male</label>
+                   <label class="radio-inline"><input type="radio" id="gender" name="gender" value="Female">Female</label></div></div>
 				   
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Email ID</label><div class="col-sm-10"><input type="text" class="form-control" name="email" placeholder="Teacher Email ID"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Phone Number</label><div class="col-sm-10"><input type="text" class="form-control" name="phone_number" placeholder="Teacher phone number"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Address</label><div class="col-sm-10"><input type="text" class="form-control" name="address" placeholder="Teacher address"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Email ID</label><div class="col-sm-10"><input type="text" class="form-control" id="email" name="email" placeholder="Teacher Email ID"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Phone Number</label><div class="col-sm-10"><input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Teacher phone number"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Address</label><div class="col-sm-10"><input type="text" class="form-control" name="address" id="address" placeholder="Teacher address"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Joining date</label><div class="col-sm-10"><input type="text" class="form-control" name="joining_date" id="joining_date" placeholder="Teacher joining date"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Username</label><div class="col-sm-10"><input type="text" class="form-control" name="username" placeholder="Teacher joining date"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Password</label><div class="col-sm-10"><input type="password" class="form-control" name="Password" placeholder="Password"></div></div>
-				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Image</label><div class="col-sm-10"><input type="file" class="form-control" name="image" placeholder="Teacher Photo" accept=".jpg"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Username</label><div class="col-sm-10"><input type="text" class="form-control" id="username" name="username" placeholder="Teacher Username"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Password</label><div class="col-sm-10"><input type="password" class="form-control" id="Password" name="Password" placeholder="Password"></div></div>
+				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Image</label><div class="col-sm-10"><input type="file" class="form-control" id="image" name="image" placeholder="Teacher Photo" accept=".jpg"></div></div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
                     <button type="submit" class="btn btn-info pull-right">Add</button>
@@ -79,7 +128,7 @@ Teachers : List of all Teachers
 			</div>
 		    <div class="box-body">
 		  <!-- form start -->
-                <form action="{{url('teacher/update')}}" enctype="multipart/form-data"  method="post" class="form-horizontal">
+                <form action="{{url('teacher/update')}}" enctype="multipart/form-data"  method="post" class="form-horizontal" >
 					{!! csrf_field() !!}
                   <div class="box-body" id="addformdiv">
                   	<div class="form-group"><label for="email" class="col-sm-2 control-label">Name</label><div class="col-sm-10"><input type="text" class="form-control" name="Name" id="NameUpdate" placeholder="Student Name"></div></div>
@@ -139,7 +188,9 @@ Teachers : List of all Teachers
   @include('includes.rightsidebar')
 @endsection
 @section('extra')
+
   <script>
+  	
 	function addteacher()
 	{
 		$('#Teacher_add').toggle(500);
@@ -173,5 +224,6 @@ Teachers : List of all Teachers
       autoclose: true,
 format : "yyyy/mm/dd"
     });
+   
 </script>
 @endsection
