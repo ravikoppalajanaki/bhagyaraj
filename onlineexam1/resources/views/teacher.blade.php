@@ -3,10 +3,20 @@
 Teachers : List of all Teachers
 @endsection
 @section('content')
-<script type="text/javascript"> $(document).ready(function () {
+<script type="text/javascript"> 
+	$(document).ready(function () {
 //alert("hii");
     $('#submitform').validate({ 
-
+    errorElement: 'label',
+    errorClass: 'validationErr',
+    errorPlacement: function(error, element) {
+    	if (element.attr('name') == 'gender') {
+            error.insertAfter('.testing');
+        }
+        else {
+            error.insertAfter(element);
+        }
+    },
         rules: {
             Name: {
                 required: true
@@ -42,8 +52,46 @@ Teachers : List of all Teachers
             },
             image: {
                 required: true
+            }
+        },
+        messages:{
+        	 Name: {
+                required: "Please Enter Teacher Name"
             },
+            Designation: {
+                required: "Please Enter Designation of Teacher"
+            },
+            email: {
+                required: "Please Enter Email ID of Teacher",
+                email:"Please Enter a valid Email ID"
+            },
+            gender: {
+                required: "Please Choose Gender of Teacher"
+            },
+            address: {
+                required: "Please Enter address of Teacher"
+            },
+            phone_number: {
+                required: "Please Enter Phone number of Teacher",
+                digits:true
+            },
+            dob: {
+                required: "Please Enter date of birth"
+            },
+            joining_date: {
+                required: "Please Enter Joining Date of Teacher"
+            },
+            username: {
+                required: "Please Enter the username"
+            },
+            Password: {
+                required: "Please Enter the password"
+            },
+            image: {
+                required: "Please Upload image of the Teacher"
+            }
         }
+
     });
 
 });
@@ -93,14 +141,14 @@ Teachers : List of all Teachers
 			</div>
 		    <div class="box-body">
 		  <!-- form start -->
-                <form action="{{url('teacher/add')}}" method="post"  enctype="multipart/form-data" class="form-horizontal" id="submitform">
+                <form action="{{url('teacher/add')}}" method="post"  enctype="multipart/form-data" class=" addform form-horizontal" id="submitform">
 					{!! csrf_field() !!}
                   <div class="box-body" id="addformdiv">
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Name</label><div class="col-sm-10"><input type="text" class="form-control" id="Name" name="Name" placeholder="Teacher Name"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Designation</label><div class="col-sm-10"><input type="text" class="form-control" id="Designation" name="Designation" placeholder="Teacher Designation"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Date of birth</label><div class="col-sm-10"><input type="text" class="form-control" name="dob" id="dob" placeholder="Teacher date of birth"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Gender</label><div class="col-sm-10"><label class="radio-inline"><input type="radio" id="gender" name="gender" value="Male" >Male</label>
-                   <label class="radio-inline"><input type="radio" id="gender" name="gender" value="Female">Female</label></div></div>
+                   <label class="radio-inline testing"><input type="radio" id="gender" name="gender" value="Female">Female</label></div></div>
 				   
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Email ID</label><div class="col-sm-10"><input type="text" class="form-control" id="email" name="email" placeholder="Teacher Email ID"></div></div>
 				    <div class="form-group"><label for="email" class="col-sm-2 control-label">Phone Number</label><div class="col-sm-10"><input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Teacher phone number"></div></div>
@@ -188,7 +236,11 @@ Teachers : List of all Teachers
   @include('includes.rightsidebar')
 @endsection
 @section('extra')
-
+<style type="text/css">
+	.addform label.validationErr{
+		color: red;
+	}
+</style>
   <script>
   	
 	function addteacher()
